@@ -6,10 +6,8 @@ const deploy: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   const { deployer } = await getNamedAccounts();
 
-  const rateProviderAddress = "";
-
   await deployments.deploy("CrossChainRateReceiver", {
-    args: [rateProviderAddress],
+    args: [],
     from: deployer,
     log: true,
   });
