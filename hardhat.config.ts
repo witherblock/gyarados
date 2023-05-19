@@ -15,6 +15,14 @@ const config: HardhatUserConfig = {
         blockNumber: 17291300,
       },
     },
+    mainnet: {
+      url: process.env.MAINNET_RPC_URL,
+      accounts: process.env.PVK !== undefined ? [process.env.PVK] : [],
+    },
+    zkevm: {
+      url: process.env.ZKEVM_RPC_URL,
+      accounts: process.env.PVK !== undefined ? [process.env.PVK] : [],
+    },
   },
   namedAccounts: {
     deployer: 0,
