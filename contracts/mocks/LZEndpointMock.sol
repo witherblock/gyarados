@@ -7,8 +7,6 @@ import "../interfaces/ILayerZeroReceiver.sol";
 import "../interfaces/ILayerZeroEndpoint.sol";
 import "../libraries/LzLib.sol";
 
-import "hardhat/console.sol";
-
 /*
 like a real LayerZero endpoint but can be mocked, which handle message transmission, verification, and receipt.
 - blocking: LayerZero provides ordered delivery of messages from a given sender to a destination chain.
@@ -272,7 +270,6 @@ contract LZEndpointMock is ILayerZeroEndpoint {
                     _payload
                 )
             {} catch (bytes memory reason) {
-                console.logBytes(reason);
                 storedPayload[_srcChainId][_path] = StoredPayload(
                     uint64(_payload.length),
                     _dstAddress,

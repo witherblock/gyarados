@@ -5,11 +5,9 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 import {ILayerZeroReceiver} from "./interfaces/ILayerZeroReceiver.sol";
 
-import "hardhat/console.sol";
-
 /// @title Cross chain rate receiver
 /// @author witherblock
-/// @notice Receives a rate to from a provider contract on a different chain than the one this contract is deployed on
+/// @notice Receives a rate from a provider contract on a different chain than the one this contract is deployed on
 /// @dev Powered using LayerZero
 contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
     /// @notice Last rate updated on the receiver
