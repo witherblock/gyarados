@@ -1,0 +1,17 @@
+{
+  "name": "gyarados",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.14.0",
+    "hardhat-deploy": "^0.11.29"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "4.8.3"
+  }
+}
