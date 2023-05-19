@@ -47,6 +47,8 @@ describe("CrossChainRateProvider & CrossChainRateReceiver", function () {
 
       await rateProvider.updateDstChainId(CHAIN_ID);
 
+      await rateReceiver.updateLayerZeroEndpoint(lzEndpointMock.address);
+
       await rateReceiver.updateRateProvider(rateProvider.address);
 
       await rateReceiver.updateSrcChainId(CHAIN_ID);

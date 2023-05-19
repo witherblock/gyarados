@@ -13,14 +13,17 @@ contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
     /// @notice Last rate updated on the receiver
     uint256 public rate;
 
-    /// @notice Last time rate was updated.
+    /// @notice Last time rate was updated
     uint256 public lastUpdated;
 
     /// @notice Source chainId
     uint16 public srcChainId;
 
-    /// @notice Rate Provider address.
+    /// @notice Rate Provider address
     address public rateProvider;
+
+    /// @notice LayerZero endpoint address
+    address public layerZeroEndpoint;
 
     /// @notice Emitted when rate is updated
     /// @param newRate the rate that was updated
@@ -33,6 +36,21 @@ contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
     /// @notice Emitted when the source chainId is updated
     /// @param newSrcChainId the source chainId that was updated
     event SrcChainIdUpdated(uint16 newSrcChainId);
+
+    /// @notice Emitted when LayerZero Endpoint is updated
+    /// @param newLayerZeroEndpoint the LayerZero Endpoint address that was updated
+    event LayerZeroEndpointUpdated(address newLayerZeroEndpoint);
+
+    /// @notice Updates the LayerZero Endpoint address
+    /// @dev Can only be called by owner
+    /// @param _layerZeroEndpoint the new layer zero endpoint address
+    function updateLayerZeroEndpoint(
+        address _layerZeroEndpoint
+    ) external onlyOwner {
+        layerZeroEndpoint = _layerZeroEndpoint;
+
+        emit LayerZeroEndpointUpdated(_layerZeroEndpoint);
+    }
 
     /// @notice Updates the RateProvider address
     /// @dev Can only be called by owner
@@ -62,6 +80,11 @@ contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
         uint64,
         bytes calldata _payload
     ) external {
+        require(
+            msg.sender == layerZeroEndpoint,
+            "Sender should be lz endpoint"
+        );
+
         address srcAddress;
         assembly {
             srcAddress := mload(add(_srcAddress, 20))

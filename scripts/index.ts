@@ -19,7 +19,7 @@ async function setDataOnRateProvider() {
   );
 
   await rateProvider.updateRateReceiver(
-    "0x52023278321775FB29bc71c6F947CC44f2b2D011"
+    "0x00346D2Fd4B2Dc3468fA38B857409BC99f832ef8"
   );
 }
 
@@ -27,7 +27,7 @@ async function setDataOnRateReceiver() {
   const signers = await ethers.getSigners();
 
   const rateReceiver = CrossChainRateReceiver__factory.connect(
-    "0x52023278321775FB29bc71c6F947CC44f2b2D011",
+    "0x00346D2Fd4B2Dc3468fA38B857409BC99f832ef8",
     signers[0]
   );
 
@@ -35,6 +35,10 @@ async function setDataOnRateReceiver() {
 
   await rateReceiver.updateRateProvider(
     "0xaD78CD17D3A4a3dc6afb203ef91C0E54433b3b9d"
+  );
+
+  await rateReceiver.updateLayerZeroEndpoint(
+    "0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4"
   );
 }
 
@@ -53,7 +57,7 @@ async function getRateOnReceiver() {
   const signers = await ethers.getSigners();
 
   const rateReceiver = CrossChainRateReceiver__factory.connect(
-    "0x52023278321775FB29bc71c6F947CC44f2b2D011",
+    "0x00346D2Fd4B2Dc3468fA38B857409BC99f832ef8",
     signers[0]
   );
 

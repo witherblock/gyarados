@@ -11,19 +11,19 @@ import {IWstETH} from "./interfaces/IWstETH.sol";
 /// @notice Provides a rate to a receiver contract on a different chain than the one this contract is deployed on
 /// @dev Powered using LayerZero
 contract CrossChainRateProvider is Ownable {
-    /// @notice Last rate updated on the receiver. Not guaranteed as updates can be dropped.
+    /// @notice Last rate updated on the provider
     uint256 public rate;
 
-    /// @notice Last time rate was updated.
+    /// @notice Last time rate was updated
     uint256 public lastUpdated;
 
     /// @notice Destination chainId
     uint16 public dstChainId;
 
-    /// @notice LayerZero endpoint address.
+    /// @notice LayerZero endpoint address
     address public layerZeroEndpoint;
 
-    /// @notice Rate Reciever address address.
+    /// @notice Rate Reciever address address
     address public rateReceiver;
 
     /// @notice Emitted when rate is updated
