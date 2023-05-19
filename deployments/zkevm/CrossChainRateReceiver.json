@@ -1,0 +1,409 @@
+{
+  "address": "0x52023278321775FB29bc71c6F947CC44f2b2D011",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newRateProvider",
+          "type": "address"
+        }
+      ],
+      "name": "RateProviderUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newRate",
+          "type": "uint256"
+        }
+      ],
+      "name": "RateUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "newSrcChainId",
+          "type": "uint16"
+        }
+      ],
+      "name": "SrcChainIdUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUpdated",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_srcChainId",
+          "type": "uint16"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_srcAddress",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_payload",
+          "type": "bytes"
+        }
+      ],
+      "name": "lzReceive",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rateProvider",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "srcChainId",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_rateProvider",
+          "type": "address"
+        }
+      ],
+      "name": "updateRateProvider",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "_srcChainId",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateSrcChainId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xfe894c4506fbf2dbb652a53099231233de004f87cbd01aa82b5c8472d4a979e0",
+  "receipt": {
+    "to": null,
+    "from": "0x4643CCf56721Ea65B03F2bd899231C828A21d314",
+    "contractAddress": "0x52023278321775FB29bc71c6F947CC44f2b2D011",
+    "transactionIndex": 0,
+    "gasUsed": "795708",
+    "logsBloom": "0x00000000004000000000000000000000000000000000000000800000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000100000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000020000800000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x2abcbbb0ea1ad61021501607f28aa62b4ad94b89b4a547d3f0d1aae7ce0db55c",
+    "transactionHash": "0xfe894c4506fbf2dbb652a53099231233de004f87cbd01aa82b5c8472d4a979e0",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 305503,
+        "transactionHash": "0xfe894c4506fbf2dbb652a53099231233de004f87cbd01aa82b5c8472d4a979e0",
+        "address": "0x52023278321775FB29bc71c6F947CC44f2b2D011",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000004643ccf56721ea65b03f2bd899231c828a21d314"
+        ],
+        "data": "0x",
+        "logIndex": 22,
+        "blockHash": "0x2abcbbb0ea1ad61021501607f28aa62b4ad94b89b4a547d3f0d1aae7ce0db55c"
+      }
+    ],
+    "blockNumber": 305503,
+    "cumulativeGasUsed": "795708",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "ef09a1f44f712d0b41cca9bf6c9e6180",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newRateProvider\",\"type\":\"address\"}],\"name\":\"RateProviderUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newRate\",\"type\":\"uint256\"}],\"name\":\"RateUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"newSrcChainId\",\"type\":\"uint16\"}],\"name\":\"SrcChainIdUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdated\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_srcChainId\",\"type\":\"uint16\"},{\"internalType\":\"bytes\",\"name\":\"_srcAddress\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"_payload\",\"type\":\"bytes\"}],\"name\":\"lzReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rateProvider\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"srcChainId\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rateProvider\",\"type\":\"address\"}],\"name\":\"updateRateProvider\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"_srcChainId\",\"type\":\"uint16\"}],\"name\":\"updateSrcChainId\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"witherblock\",\"details\":\"Powered using LayerZero\",\"events\":{\"RateProviderUpdated(address)\":{\"params\":{\"newRateProvider\":\"the RateProvider address that was updated\"}},\"RateUpdated(uint256)\":{\"params\":{\"newRate\":\"the rate that was updated\"}},\"SrcChainIdUpdated(uint16)\":{\"params\":{\"newSrcChainId\":\"the source chainId that was updated\"}}},\"kind\":\"dev\",\"methods\":{\"lzReceive(uint16,bytes,uint64,bytes)\":{\"params\":{\"_payload\":\"The payload\",\"_srcAddress\":\"The source address\",\"_srcChainId\":\"The source chainId\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"updateRateProvider(address)\":{\"details\":\"Can only be called by owner\",\"params\":{\"_rateProvider\":\"the new rate provider address\"}},\"updateSrcChainId(uint16)\":{\"details\":\"Can only be called by owner\",\"params\":{\"_srcChainId\":\"the source chainId\"}}},\"title\":\"Cross chain rate receiver\",\"version\":1},\"userdoc\":{\"events\":{\"RateProviderUpdated(address)\":{\"notice\":\"Emitted when RateProvider is updated\"},\"RateUpdated(uint256)\":{\"notice\":\"Emitted when rate is updated\"},\"SrcChainIdUpdated(uint16)\":{\"notice\":\"Emitted when the source chainId is updated\"}},\"kind\":\"user\",\"methods\":{\"getRate()\":{\"notice\":\"Gets the last stored rate in the contract\"},\"lastUpdated()\":{\"notice\":\"Last time rate was updated.\"},\"lzReceive(uint16,bytes,uint64,bytes)\":{\"notice\":\"LayerZero receive function which is called via send from a different chain\"},\"rate()\":{\"notice\":\"Last rate updated on the receiver\"},\"rateProvider()\":{\"notice\":\"Rate Provider address.\"},\"srcChainId()\":{\"notice\":\"Source chainId\"},\"updateRateProvider(address)\":{\"notice\":\"Updates the RateProvider address\"},\"updateSrcChainId(uint16)\":{\"notice\":\"Updates the source chainId\"}},\"notice\":\"Receives a rate from a provider contract on a different chain than the one this contract is deployed on\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/CrossChainRateReceiver.sol\":\"CrossChainRateReceiver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/CrossChainRateReceiver.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport {Ownable} from \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\nimport {ILayerZeroReceiver} from \\\"./interfaces/ILayerZeroReceiver.sol\\\";\\n\\n/// @title Cross chain rate receiver\\n/// @author witherblock\\n/// @notice Receives a rate from a provider contract on a different chain than the one this contract is deployed on\\n/// @dev Powered using LayerZero\\ncontract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {\\n    /// @notice Last rate updated on the receiver\\n    uint256 public rate;\\n\\n    /// @notice Last time rate was updated.\\n    uint256 public lastUpdated;\\n\\n    /// @notice Source chainId\\n    uint16 public srcChainId;\\n\\n    /// @notice Rate Provider address.\\n    address public rateProvider;\\n\\n    /// @notice Emitted when rate is updated\\n    /// @param newRate the rate that was updated\\n    event RateUpdated(uint256 newRate);\\n\\n    /// @notice Emitted when RateProvider is updated\\n    /// @param newRateProvider the RateProvider address that was updated\\n    event RateProviderUpdated(address newRateProvider);\\n\\n    /// @notice Emitted when the source chainId is updated\\n    /// @param newSrcChainId the source chainId that was updated\\n    event SrcChainIdUpdated(uint16 newSrcChainId);\\n\\n    /// @notice Updates the RateProvider address\\n    /// @dev Can only be called by owner\\n    /// @param _rateProvider the new rate provider address\\n    function updateRateProvider(address _rateProvider) external onlyOwner {\\n        rateProvider = _rateProvider;\\n\\n        emit RateProviderUpdated(_rateProvider);\\n    }\\n\\n    /// @notice Updates the source chainId\\n    /// @dev Can only be called by owner\\n    /// @param _srcChainId the source chainId\\n    function updateSrcChainId(uint16 _srcChainId) external onlyOwner {\\n        srcChainId = _srcChainId;\\n\\n        emit SrcChainIdUpdated(_srcChainId);\\n    }\\n\\n    /// @notice LayerZero receive function which is called via send from a different chain\\n    /// @param _srcChainId The source chainId\\n    /// @param _srcAddress The source address\\n    /// @param _payload The payload\\n    function lzReceive(\\n        uint16 _srcChainId,\\n        bytes memory _srcAddress,\\n        uint64,\\n        bytes calldata _payload\\n    ) external {\\n        address srcAddress;\\n        assembly {\\n            srcAddress := mload(add(_srcAddress, 20))\\n        }\\n\\n        require(_srcChainId == srcChainId, \\\"Src chainId must be correct\\\");\\n        require(srcAddress == rateProvider, \\\"Src address must be provider\\\");\\n\\n        uint _rate = abi.decode(_payload, (uint));\\n\\n        rate = _rate;\\n\\n        lastUpdated = block.timestamp;\\n\\n        emit RateUpdated(_rate);\\n    }\\n\\n    /// @notice Gets the last stored rate in the contract\\n    function getRate() external view returns (uint256) {\\n        return rate;\\n    }\\n}\\n\",\"keccak256\":\"0xc631526401f218667abbf296d3bf3cdd79134b50b131519e8ca9b9faf27a9c7a\",\"license\":\"MIT\"},\"contracts/interfaces/ILayerZeroReceiver.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity >=0.5.0;\\n\\ninterface ILayerZeroReceiver {\\n    // @notice LayerZero endpoint will invoke this function to deliver the message on the destination\\n    // @param _srcChainId - the source endpoint identifier\\n    // @param _srcAddress - the source sending contract address from the source chain\\n    // @param _nonce - the ordered message nonce\\n    // @param _payload - the signed payload is the UA bytes has encoded to be sent\\n    function lzReceive(\\n        uint16 _srcChainId,\\n        bytes calldata _srcAddress,\\n        uint64 _nonce,\\n        bytes calldata _payload\\n    ) external;\\n}\\n\",\"keccak256\":\"0xac1966c1229bd4dc36b6c69eeb94a537bd9aa2198d7623b9ba7f8f7dbe79bb4c\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061002d61002261003260201b60201c565b61003a60201b60201c565b6100fe565b600033905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b610cf98061010d6000396000f3fe608060405234801561001057600080fd5b50600436106100a85760003560e01c8063679aefce11610071578063679aefce1461013d578063715018a61461015b5780638da5cb5b14610165578063949db65814610183578063d0b06f5d146101a1578063f2fde38b146101bf576100a8565b80621d3567146100ad578063290b5350146100c95780632c4e722e146100e5578063496c62e71461010357806349d126051461011f575b600080fd5b6100c760048036038101906100c2919061089f565b6101db565b005b6100e360048036038101906100de9190610943565b61032f565b005b6100ed61038e565b6040516100fa9190610989565b60405180910390f35b61011d60048036038101906101189190610a02565b610394565b005b610127610417565b6040516101349190610a3e565b60405180910390f35b61014561042b565b6040516101529190610989565b60405180910390f35b610163610435565b005b61016d610449565b60405161017a9190610a68565b60405180910390f35b61018b610472565b6040516101989190610a68565b60405180910390f35b6101a9610498565b6040516101b69190610989565b60405180910390f35b6101d960048036038101906101d49190610a02565b61049e565b005b600060148501519050600360009054906101000a900461ffff1661ffff168661ffff161461023e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161023590610ae0565b60405180910390fd5b600360029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16146102ce576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102c590610b4c565b60405180910390fd5b600083838101906102df9190610b98565b905080600181905550426002819055507fe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b8160405161031e9190610989565b60405180910390a150505050505050565b610337610521565b80600360006101000a81548161ffff021916908361ffff1602179055507f618f724fbcac3c2403733c2935c91acf3b9517362bacd763f22c288a58b17e25816040516103839190610a3e565b60405180910390a150565b60015481565b61039c610521565b80600360026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f0d06d9b44e07c32063e5d28b944beae17c12e342870c5e7d956ec5b252a3f5648160405161040c9190610a68565b60405180910390a150565b600360009054906101000a900461ffff1681565b6000600154905090565b61043d610521565b610447600061059f565b565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600360029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b6104a6610521565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1603610515576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161050c90610c37565b60405180910390fd5b61051e8161059f565b50565b610529610663565b73ffffffffffffffffffffffffffffffffffffffff16610547610449565b73ffffffffffffffffffffffffffffffffffffffff161461059d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161059490610ca3565b60405180910390fd5b565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b600033905090565b6000604051905090565b600080fd5b600080fd5b600061ffff82169050919050565b6106968161067f565b81146106a157600080fd5b50565b6000813590506106b38161068d565b92915050565b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b61070c826106c3565b810181811067ffffffffffffffff8211171561072b5761072a6106d4565b5b80604052505050565b600061073e61066b565b905061074a8282610703565b919050565b600067ffffffffffffffff82111561076a576107696106d4565b5b610773826106c3565b9050602081019050919050565b82818337600083830152505050565b60006107a261079d8461074f565b610734565b9050828152602081018484840111156107be576107bd6106be565b5b6107c9848285610780565b509392505050565b600082601f8301126107e6576107e56106b9565b5b81356107f684826020860161078f565b91505092915050565b600067ffffffffffffffff82169050919050565b61081c816107ff565b811461082757600080fd5b50565b60008135905061083981610813565b92915050565b600080fd5b600080fd5b60008083601f84011261085f5761085e6106b9565b5b8235905067ffffffffffffffff81111561087c5761087b61083f565b5b60208301915083600182028301111561089857610897610844565b5b9250929050565b6000806000806000608086880312156108bb576108ba610675565b5b60006108c9888289016106a4565b955050602086013567ffffffffffffffff8111156108ea576108e961067a565b5b6108f6888289016107d1565b94505060406109078882890161082a565b935050606086013567ffffffffffffffff8111156109285761092761067a565b5b61093488828901610849565b92509250509295509295909350565b60006020828403121561095957610958610675565b5b6000610967848285016106a4565b91505092915050565b6000819050919050565b61098381610970565b82525050565b600060208201905061099e600083018461097a565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006109cf826109a4565b9050919050565b6109df816109c4565b81146109ea57600080fd5b50565b6000813590506109fc816109d6565b92915050565b600060208284031215610a1857610a17610675565b5b6000610a26848285016109ed565b91505092915050565b610a388161067f565b82525050565b6000602082019050610a536000830184610a2f565b92915050565b610a62816109c4565b82525050565b6000602082019050610a7d6000830184610a59565b92915050565b600082825260208201905092915050565b7f53726320636861696e4964206d75737420626520636f72726563740000000000600082015250565b6000610aca601b83610a83565b9150610ad582610a94565b602082019050919050565b60006020820190508181036000830152610af981610abd565b9050919050565b7f5372632061646472657373206d7573742062652070726f766964657200000000600082015250565b6000610b36601c83610a83565b9150610b4182610b00565b602082019050919050565b60006020820190508181036000830152610b6581610b29565b9050919050565b610b7581610970565b8114610b8057600080fd5b50565b600081359050610b9281610b6c565b92915050565b600060208284031215610bae57610bad610675565b5b6000610bbc84828501610b83565b91505092915050565b7f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160008201527f6464726573730000000000000000000000000000000000000000000000000000602082015250565b6000610c21602683610a83565b9150610c2c82610bc5565b604082019050919050565b60006020820190508181036000830152610c5081610c14565b9050919050565b7f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572600082015250565b6000610c8d602083610a83565b9150610c9882610c57565b602082019050919050565b60006020820190508181036000830152610cbc81610c80565b905091905056fea26469706673582212201c2f30d241de8bf4a64ae3c01f51f086f0c26e673cb4c983da0579e773bcd4ab64736f6c63430008120033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a85760003560e01c8063679aefce11610071578063679aefce1461013d578063715018a61461015b5780638da5cb5b14610165578063949db65814610183578063d0b06f5d146101a1578063f2fde38b146101bf576100a8565b80621d3567146100ad578063290b5350146100c95780632c4e722e146100e5578063496c62e71461010357806349d126051461011f575b600080fd5b6100c760048036038101906100c2919061089f565b6101db565b005b6100e360048036038101906100de9190610943565b61032f565b005b6100ed61038e565b6040516100fa9190610989565b60405180910390f35b61011d60048036038101906101189190610a02565b610394565b005b610127610417565b6040516101349190610a3e565b60405180910390f35b61014561042b565b6040516101529190610989565b60405180910390f35b610163610435565b005b61016d610449565b60405161017a9190610a68565b60405180910390f35b61018b610472565b6040516101989190610a68565b60405180910390f35b6101a9610498565b6040516101b69190610989565b60405180910390f35b6101d960048036038101906101d49190610a02565b61049e565b005b600060148501519050600360009054906101000a900461ffff1661ffff168661ffff161461023e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161023590610ae0565b60405180910390fd5b600360029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16146102ce576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102c590610b4c565b60405180910390fd5b600083838101906102df9190610b98565b905080600181905550426002819055507fe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b8160405161031e9190610989565b60405180910390a150505050505050565b610337610521565b80600360006101000a81548161ffff021916908361ffff1602179055507f618f724fbcac3c2403733c2935c91acf3b9517362bacd763f22c288a58b17e25816040516103839190610a3e565b60405180910390a150565b60015481565b61039c610521565b80600360026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f0d06d9b44e07c32063e5d28b944beae17c12e342870c5e7d956ec5b252a3f5648160405161040c9190610a68565b60405180910390a150565b600360009054906101000a900461ffff1681565b6000600154905090565b61043d610521565b610447600061059f565b565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b600360029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b6104a6610521565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1603610515576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161050c90610c37565b60405180910390fd5b61051e8161059f565b50565b610529610663565b73ffffffffffffffffffffffffffffffffffffffff16610547610449565b73ffffffffffffffffffffffffffffffffffffffff161461059d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161059490610ca3565b60405180910390fd5b565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a35050565b600033905090565b6000604051905090565b600080fd5b600080fd5b600061ffff82169050919050565b6106968161067f565b81146106a157600080fd5b50565b6000813590506106b38161068d565b92915050565b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b61070c826106c3565b810181811067ffffffffffffffff8211171561072b5761072a6106d4565b5b80604052505050565b600061073e61066b565b905061074a8282610703565b919050565b600067ffffffffffffffff82111561076a576107696106d4565b5b610773826106c3565b9050602081019050919050565b82818337600083830152505050565b60006107a261079d8461074f565b610734565b9050828152602081018484840111156107be576107bd6106be565b5b6107c9848285610780565b509392505050565b600082601f8301126107e6576107e56106b9565b5b81356107f684826020860161078f565b91505092915050565b600067ffffffffffffffff82169050919050565b61081c816107ff565b811461082757600080fd5b50565b60008135905061083981610813565b92915050565b600080fd5b600080fd5b60008083601f84011261085f5761085e6106b9565b5b8235905067ffffffffffffffff81111561087c5761087b61083f565b5b60208301915083600182028301111561089857610897610844565b5b9250929050565b6000806000806000608086880312156108bb576108ba610675565b5b60006108c9888289016106a4565b955050602086013567ffffffffffffffff8111156108ea576108e961067a565b5b6108f6888289016107d1565b94505060406109078882890161082a565b935050606086013567ffffffffffffffff8111156109285761092761067a565b5b61093488828901610849565b92509250509295509295909350565b60006020828403121561095957610958610675565b5b6000610967848285016106a4565b91505092915050565b6000819050919050565b61098381610970565b82525050565b600060208201905061099e600083018461097a565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006109cf826109a4565b9050919050565b6109df816109c4565b81146109ea57600080fd5b50565b6000813590506109fc816109d6565b92915050565b600060208284031215610a1857610a17610675565b5b6000610a26848285016109ed565b91505092915050565b610a388161067f565b82525050565b6000602082019050610a536000830184610a2f565b92915050565b610a62816109c4565b82525050565b6000602082019050610a7d6000830184610a59565b92915050565b600082825260208201905092915050565b7f53726320636861696e4964206d75737420626520636f72726563740000000000600082015250565b6000610aca601b83610a83565b9150610ad582610a94565b602082019050919050565b60006020820190508181036000830152610af981610abd565b9050919050565b7f5372632061646472657373206d7573742062652070726f766964657200000000600082015250565b6000610b36601c83610a83565b9150610b4182610b00565b602082019050919050565b60006020820190508181036000830152610b6581610b29565b9050919050565b610b7581610970565b8114610b8057600080fd5b50565b600081359050610b9281610b6c565b92915050565b600060208284031215610bae57610bad610675565b5b6000610bbc84828501610b83565b91505092915050565b7f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160008201527f6464726573730000000000000000000000000000000000000000000000000000602082015250565b6000610c21602683610a83565b9150610c2c82610bc5565b604082019050919050565b60006020820190508181036000830152610c5081610c14565b9050919050565b7f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572600082015250565b6000610c8d602083610a83565b9150610c9882610c57565b602082019050919050565b60006020820190508181036000830152610cbc81610c80565b905091905056fea26469706673582212201c2f30d241de8bf4a64ae3c01f51f086f0c26e673cb4c983da0579e773bcd4ab64736f6c63430008120033",
+  "devdoc": {
+    "author": "witherblock",
+    "details": "Powered using LayerZero",
+    "events": {
+      "RateProviderUpdated(address)": {
+        "params": {
+          "newRateProvider": "the RateProvider address that was updated"
+        }
+      },
+      "RateUpdated(uint256)": {
+        "params": {
+          "newRate": "the rate that was updated"
+        }
+      },
+      "SrcChainIdUpdated(uint16)": {
+        "params": {
+          "newSrcChainId": "the source chainId that was updated"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "lzReceive(uint16,bytes,uint64,bytes)": {
+        "params": {
+          "_payload": "The payload",
+          "_srcAddress": "The source address",
+          "_srcChainId": "The source chainId"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "updateRateProvider(address)": {
+        "details": "Can only be called by owner",
+        "params": {
+          "_rateProvider": "the new rate provider address"
+        }
+      },
+      "updateSrcChainId(uint16)": {
+        "details": "Can only be called by owner",
+        "params": {
+          "_srcChainId": "the source chainId"
+        }
+      }
+    },
+    "title": "Cross chain rate receiver",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "RateProviderUpdated(address)": {
+        "notice": "Emitted when RateProvider is updated"
+      },
+      "RateUpdated(uint256)": {
+        "notice": "Emitted when rate is updated"
+      },
+      "SrcChainIdUpdated(uint16)": {
+        "notice": "Emitted when the source chainId is updated"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "getRate()": {
+        "notice": "Gets the last stored rate in the contract"
+      },
+      "lastUpdated()": {
+        "notice": "Last time rate was updated."
+      },
+      "lzReceive(uint16,bytes,uint64,bytes)": {
+        "notice": "LayerZero receive function which is called via send from a different chain"
+      },
+      "rate()": {
+        "notice": "Last rate updated on the receiver"
+      },
+      "rateProvider()": {
+        "notice": "Rate Provider address."
+      },
+      "srcChainId()": {
+        "notice": "Source chainId"
+      },
+      "updateRateProvider(address)": {
+        "notice": "Updates the RateProvider address"
+      },
+      "updateSrcChainId(uint16)": {
+        "notice": "Updates the source chainId"
+      }
+    },
+    "notice": "Receives a rate from a provider contract on a different chain than the one this contract is deployed on",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/CrossChainRateReceiver.sol:CrossChainRateReceiver",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 148,
+        "contract": "contracts/CrossChainRateReceiver.sol:CrossChainRateReceiver",
+        "label": "rate",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 151,
+        "contract": "contracts/CrossChainRateReceiver.sol:CrossChainRateReceiver",
+        "label": "lastUpdated",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 154,
+        "contract": "contracts/CrossChainRateReceiver.sol:CrossChainRateReceiver",
+        "label": "srcChainId",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint16"
+      },
+      {
+        "astId": 157,
+        "contract": "contracts/CrossChainRateReceiver.sol:CrossChainRateReceiver",
+        "label": "rateProvider",
+        "offset": 2,
+        "slot": "3",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

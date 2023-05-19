@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
     deployer: 0,
   },
   paths: {
-    deploy: "deploy/provider",
+    deploy: "deploy/receiver",
   },
 };
 
