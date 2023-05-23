@@ -10,9 +10,9 @@ RateReceiver (On Polygon zkEVM): [0x00346D2Fd4B2Dc3468fA38B857409BC99f832ef8](ht
 
 ### Test Transaction
 
-Update Rate tx: https://etherscan.io/tx/0x3a4406dc799d79a2f158821b0ee46796ce8f80370fce7c815be880ab0bc65c01
-LayerZero crosschain message: https://layerzeroscan.com/101/address/0xad78cd17d3a4a3dc6afb203ef91c0e54433b3b9d/message/158/address/0x00346d2fd4b2dc3468fa38b857409bc99f832ef8/nonce/1
-zkEVM receive tx: https://zkevm.polygonscan.com/tx/0x7b824c70da96d94ea7ca98949ef7ff5043de5eedb46b2ed9b814e9b0b2a50e52
+- Update Rate tx: https://etherscan.io/tx/0x3a4406dc799d79a2f158821b0ee46796ce8f80370fce7c815be880ab0bc65c01
+- LayerZero crosschain message: https://layerzeroscan.com/101/address/0xad78cd17d3a4a3dc6afb203ef91c0e54433b3b9d/message/158/address/0x00346d2fd4b2dc3468fa38b857409bc99f832ef8/nonce/1
+- zkEVM receive tx: https://zkevm.polygonscan.com/tx/0x7b824c70da96d94ea7ca98949ef7ff5043de5eedb46b2ed9b814e9b0b2a50e52
 
 ## Getting started
 
