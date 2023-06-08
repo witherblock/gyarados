@@ -6,8 +6,8 @@ const deploy: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   const { deployer } = await getNamedAccounts();
 
-  await deployments.deploy("CrossChainRateReceiver", {
-    args: [],
+  await deployments.deploy("REthRateProvider", {
+    args: [158, "0x66A71Dcef29A0fFBDBE3c6a460a3B5BC225Cd675"],
     from: deployer,
     log: true,
   });

@@ -2,15 +2,15 @@
 pragma solidity ^0.8.0;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-import {ILayerZeroEndpoint} from "./interfaces/ILayerZeroEndpoint.sol";
-import {IWstETH} from "./interfaces/IWstETH.sol";
+import {ILayerZeroEndpoint} from "../interfaces/ILayerZeroEndpoint.sol";
 
 /// @title Cross chain rate provider
 /// @author witherblock
 /// @notice Provides a rate to a receiver contract on a different chain than the one this contract is deployed on
 /// @dev Powered using LayerZero
-contract CrossChainRateProvider is Ownable {
+abstract contract CrossChainRateProvider is Ownable, ReentrancyGuard {
     /// @notice Last rate updated on the provider
     uint256 public rate;
 
@@ -25,6 +25,16 @@ contract CrossChainRateProvider is Ownable {
 
     /// @notice Rate Reciever address address
     address public rateReceiver;
+
+    /// @notice Information of which token and base token rate is being provided
+    RateInfo public rateInfo;
+
+    struct RateInfo {
+        string tokenSymbol;
+        address tokenAddress;
+        string baseTokenSymbol;
+        address baseTokenAddress;
+    }
 
     /// @notice Emitted when rate is updated
     /// @param newRate the rate that was updated
@@ -72,7 +82,9 @@ contract CrossChainRateProvider is Ownable {
     }
 
     /// @notice Updates rate in this contract and on the receiver
-    function updateRate() external payable {
+    /// @dev This function is set to payable to pay for gas on execute lzReceive (on the receiver contract)
+    /// on the destination chain. To compute the correct value to send check here - https://layerzero.gitbook.io/docs/evm-guides/code-examples/estimating-message-fees
+    function updateRate() external payable nonReentrant {
         uint256 latestRate = getLatestRate();
 
         bytes memory remoteAndLocalAddresses = abi.encodePacked(
@@ -98,9 +110,6 @@ contract CrossChainRateProvider is Ownable {
         emit RateUpdated(rate);
     }
 
-    /// @notice Returns the latest rate from wstETH contract
-    function getLatestRate() public view returns (uint256) {
-        return
-            IWstETH(0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0).stEthPerToken();
-    }
+    /// @notice Returns the latest rate
+    function getLatestRate() public view virtual returns (uint256) {}
 }

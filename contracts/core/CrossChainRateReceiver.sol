@@ -3,13 +3,13 @@ pragma solidity ^0.8.0;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-import {ILayerZeroReceiver} from "./interfaces/ILayerZeroReceiver.sol";
+import {ILayerZeroReceiver} from "../interfaces/ILayerZeroReceiver.sol";
 
 /// @title Cross chain rate receiver
 /// @author witherblock
 /// @notice Receives a rate from a provider contract on a different chain than the one this contract is deployed on
 /// @dev Powered using LayerZero
-contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
+abstract contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
     /// @notice Last rate updated on the receiver
     uint256 public rate;
 
@@ -24,6 +24,14 @@ contract CrossChainRateReceiver is ILayerZeroReceiver, Ownable {
 
     /// @notice LayerZero endpoint address
     address public layerZeroEndpoint;
+
+    /// @notice Information of which token and base token rate is being provided
+    RateInfo public rateInfo;
+
+    struct RateInfo {
+        string tokenSymbol;
+        string baseTokenSymbol;
+    }
 
     /// @notice Emitted when rate is updated
     /// @param newRate the rate that was updated
