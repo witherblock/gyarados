@@ -9,7 +9,7 @@ import {ILayerZeroEndpoint} from "../interfaces/ILayerZeroEndpoint.sol";
 /// @title Multi chain rate provider
 /// @author witherblock
 /// @notice Provides a rate to a multiple receiver contracts on a different chain than the one this contract is deployed on
-/// @dev Powered using LayerZero
+/// @dev Powered using LayerZero, all chainId(s) references are for LayerZero chainIds and not blockchain chainIds
 abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
     /// @notice Last rate updated on the provider
     uint256 public rate;
@@ -50,13 +50,15 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
     /// @param newRateReceiver the RateReceiver address that was updated
     event RateReceiverUpdated(address newRateReceiver);
 
-    // /// @notice Emitted when a destination chainId is added
-    // /// @param dstChainId the destination chainId that was added
-    // event DstChainIdAdded(uint dstChainId);
+    /// @notice Emitted when a new rate receiver is added
+    /// @param newChainId the chainId of the rate receiver
+    /// @param newContract the address of the rate receiver
+    event RateReceiverAdded(uint16 newChainId, address newContract);
 
-    // /// @notice Emitted when a destination chainId is removed
-    // /// @param dstChainId the destination chainId that was remove
-    // event DstChainIdRemoved(uint dstChainId);
+    /// @notice Emitted when a rate receiver is removed
+    /// @param oldChainId the chainId of the rate receiver
+    /// @param oldContract the address of the rate receiver
+    event RateReceiverRemoved(uint16 oldChainId, address oldContract);
 
     /// @notice Updates the LayerZero Endpoint address
     /// @dev Can only be called by owner
@@ -69,7 +71,7 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
         emit LayerZeroEndpointUpdated(_layerZeroEndpoint);
     }
 
-    /// @notice Adds a destination chainId
+    /// @notice Adds a rate receiver
     /// @dev Can only be called by owner
     /// @param _chainId rate receiver chainId
     /// @param _contract rate receiver address
@@ -81,22 +83,36 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
             RateReceiver({_chainId: _chainId, _contract: _contract})
         );
 
-        // emit DstChainIdAdded(_dstChainId);
+        emit RateReceiverAdded(_chainId, _contract);
     }
 
-    /// @notice Removes a destination chainId
+    /// @notice Removes a rate receiver
     /// @dev Can only be called by owner
-    /// @param _index the destination chainId
+    /// @param _index the index of the rate receiver
     function removeRateReceiver(uint _index) external onlyOwner {
+        // Store the rate receiver in a memory var
+        RateReceiver memory _rateReceiverToBeRemoved = rateReceivers[_index];
+
+        // Get the current length of all the rate receivers
         uint rateReceiversLength = rateReceivers.length;
 
-        RateReceiver memory lastValue = rateReceivers[rateReceiversLength - 1];
+        // Get the last index of the all the rate receivers
+        uint lastIndex = rateReceiversLength - 1;
 
-        rateReceivers[_index] = lastValue;
+        if (lastIndex != _index) {
+            // Get the last rate receiver
+            RateReceiver memory lastValue = rateReceivers[lastIndex];
+
+            // Replace the index value with the last index value
+            rateReceivers[_index] = lastValue;
+        }
 
         rateReceivers.pop();
 
-        // emit DstChainIdAdded(_dstChainId);
+        emit RateReceiverRemoved(
+            _rateReceiverToBeRemoved._chainId,
+            _rateReceiverToBeRemoved._contract
+        );
     }
 
     /// @notice Updates rate in this contract and on the receivers
@@ -147,15 +163,19 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
         emit RateUpdated(rate);
     }
 
+    /// @notice Estimate the fees of sending an update to a receiver contract for a
+    /// particular destination chain id
+    /// @param _dstChainId desitnation chainId
+    /// @return estimatedFee the estimated fee
     function estimateFees(
-        uint16 dstChainId
+        uint16 _dstChainId
     ) external view returns (uint estimatedFee) {
         uint256 latestRate = getLatestRate();
 
         bytes memory _payload = abi.encode(latestRate);
 
         (estimatedFee, ) = ILayerZeroEndpoint(layerZeroEndpoint).estimateFees(
-            dstChainId,
+            _dstChainId,
             address(this),
             _payload,
             false,
@@ -163,7 +183,9 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
         );
     }
 
-    function estimateTotalFee() external view returns (uint totalFee) {
+    /// @notice Estimate the fees of sending an update to all chains/receiver contracts
+    /// @return totalEstimatedFee the total estimated fee
+    function estimateTotalFee() external view returns (uint totalEstimatedFee) {
         uint256 latestRate = getLatestRate();
 
         bytes memory _payload = abi.encode(latestRate);
@@ -182,12 +204,16 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
                     bytes("")
                 );
 
-            totalFee += estimatedFee;
+            totalEstimatedFee += estimatedFee;
 
             unchecked {
                 ++i;
             }
         }
+    }
+
+    function getRateReceivers() external view returns (RateReceiver[] memory) {
+        return rateReceivers;
     }
 
     /// @notice Returns the latest rate
