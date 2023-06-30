@@ -23,6 +23,8 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
     /// @notice Information of which token and base token rate is being provided
     RateInfo public rateInfo;
 
+
+
     /// @notice Rate receivers
     RateReceiver[] public rateReceivers;
 
@@ -65,7 +67,7 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
     /// @param _layerZeroEndpoint the new layer zero endpoint address
     function updateLayerZeroEndpoint(
         address _layerZeroEndpoint
-    ) external onlyOwner {
+    ) external onlyOwner onlyEmergencyMode {
         layerZeroEndpoint = _layerZeroEndpoint;
 
         emit LayerZeroEndpointUpdated(_layerZeroEndpoint);
@@ -218,4 +220,8 @@ abstract contract MultiChainRateProvider is Ownable, ReentrancyGuard {
 
     /// @notice Returns the latest rate
     function getLatestRate() public view virtual returns (uint256) {}
+
+
+
+    }
 }
