@@ -1,0 +1,18 @@
+autofetch_sources: True
+
+networks:
+  default: mainnet-fork
+
+
+
+dependencies:
+    - OpenZeppelin/openzeppelin-contracts@4.5.0
+    - smartcontractkit/chainlink@1.11.0
+    - Tritium-VLK/balancer-v2-interfaces@2023.04.24
+
+compiler:
+    solc:
+        remappings:
+          - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.5.0"
+          - "@chainlink=smartcontractkit/chainlink@1.11.0"
+          - "@balancer=Tritium-VLK/balancer-v2-interfaces@2023.04.24"
